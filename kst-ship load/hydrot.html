@@ -1,13 +1,147 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>kstship read</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-	<h1>HYDROT.DAT</h1>      
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>KST-SHIP LOAD</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <h1>KST-SHIP LOAD</h1>
+    </header>
+    <nav class="navi">
+      <ul>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./dbhull.html">DBHULL</a></li>
+        <li><a class="active" href="./hydrot.html">HYDROT</a></li>
+        <li><a href="./knswia.html">KNSWIA</a></li>
+        <li><a href="./volume.html">VOLUME</a></li>
+        <li><a href="./loadcd.html">LOADCD</a></li>
+        <li><a href="./prwind.html">PRWIND</a></li>
+        <li><a href="./stabkg.html">STABKG</a></li>
+        <li><a href="./stabps.html">STABPS</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h1>HYDROT.DAT</h1>
+      <p id="dat">
+        Please Select text file of which contents are to be read: 
+        <input type="file" id="txtfiletoread" />
+      </p>
+      <p>The File Contents are as below:</p> 
+      <div id="filecontents">
+        <!-- ① -->
+        <h4>SHIP NO &nbsp;&nbsp;&nbsp;&nbsp;ISECT</h4> 
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <br>
+
+        <!-- ② -->
+        <h4>Caculating Section Define</h4>
+        <div style="float: left; margin-right: 10px;">FR</div>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div style="float: left; margin-right: 12px;">dx</div>
+        <table>          
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div style="float: left; margin-right: 10px;">Sect No</div>
+        <table>          
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div style="float: left; margin-right: 5px;">Deck No</div>
+        <table>          
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <br>
+
+        <!-- ③ -->
+        <h4>&nbsp;Hmin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hmax &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmax</h4>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <br>
+
+        <!-- ④ -->
+        <h4>&nbsp;Tmin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tmax &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;△T &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ρsw &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ktrim</h4>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <br>
+        <!-- ⑤ -->
+        <h4>&nbsp;Trim </h4>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <br>
+
+      </div>  
+    </section>
+  </div>  
+  <script src="script.js"></script>
+</body>
 </html>

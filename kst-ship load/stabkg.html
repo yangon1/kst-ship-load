@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>kstship read</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <h1>STABKG.DAT</h1>  
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>KST-SHIP LOAD</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <h1>KST-SHIP LOAD</h1>
+    </header>
+    <nav class="navi">
+      <ul>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./dbhull.html">DBHULL</a></li>
+        <li><a href="./hydrot.html">HYDROT</a></li>
+        <li><a href="./knswia.html">KNSWIA</a></li>
+        <li><a href="./volume.html">VOLUME</a></li>
+        <li><a href="./loadcd.html">LOADCD</a></li>
+        <li><a href="./prwind.html">PRWIND</a></li>
+        <li><a class="active" href="./stabkg.html">STABKG</a></li>
+        <li><a href="./stabps.html">STABPS</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h1>STABKG.DAT</h1>
+      <p>Please Select DAT file : <input type="file" id="file_in" /> </p>
+      <p>Please Select OUT file : <input type="file" id="file_out" /> </p>
+      <p>The File Contents are as below:</p> 
+      <div id="filecontents">
+      </div>  
+      
+    </section>
+  </div>  
+  <script src="script.js"></script>
+</body>
 </html>

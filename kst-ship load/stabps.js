@@ -48,7 +48,7 @@ var stabps_out = function () {
 
             // 공백을 기준으로 배열에 넣기
             var outStrSplit = outStrRep.split(/n| /);
-            // console.log(outStrSplit);
+            console.log(outStrSplit);
         
             // TOTAL WEIGHT 찾기
             var sum = new Array(); 
@@ -61,12 +61,15 @@ var stabps_out = function () {
                 if ( outStrSplit[i] == "(m2):" ) {
                     sum[cnt] = outStrSplit[i+1];            // A
                     sum[cnt+5] = outStrSplit[i+12];         // H
-                    sum[cnt+15] = outStrSplit[i+42];        // 현단몰입각
-                    sum[cnt+20] = outStrSplit[i+49];        // 한계경사각
-                    sum[cnt+25] = outStrSplit[i+53];        // 복원정
+                }
+                if ( outStrSplit[i] == "Y" ) {
+                    sum[cnt+15] = outStrSplit[i+9];        // 현단몰입각
+                    sum[cnt+20] = outStrSplit[i+16];        // 한계경사각
+                    sum[cnt+25] = outStrSplit[i+20];        // 복원정
 
                     cnt += 1;
                 }
+
                 if ( cnt == CONDITION_NUM) break;
             }
             

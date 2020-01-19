@@ -53,31 +53,33 @@ var loadcd_out = function () {
             // TOTAL WEIGHT 찾기
             var sum = new Array(); 
             var cnt=0, chk=0;
-            var CONDITION_NUM = 5;  // CONDITION 갯수
+
+            var CONDITION_NUM = 7;  // CONDITION 갯수
+
             for ( var i=0; i<outStrSplit.length; i++ ) {
                 // console.log(i + " : " + outStrSplit[i] + " && " + (i+1) + " : " + outStrSplit[i+1]);
                 if ( outStrSplit[i] == "TOTAL" && outStrSplit[i+1] == "WEIGHT") {
                     sum[cnt] = outStrSplit[i+2];            // DISPLACEMENT
-                    sum[cnt+5] = outStrSplit[i+3];          // L.C.G
-                    sum[cnt+10] = outStrSplit[i+5];         // K.G
+                    sum[cnt+CONDITION_NUM*2] = outStrSplit[i+3];          // L.C.G
                                     
                     chk = 1;  // 맨앞의 "DRAFT EQUIVALENT를 검색에서 제외하기 위해 사용"                       
                 }
                 if ( outStrSplit[i] == "DRAFT" && outStrSplit[i+1] == "EQUIVALENT") {
                     if ( chk == 1) {
-                        sum[cnt+15] = outStrSplit[i+2];     // EQUIVALENT DRAFT
-                        sum[cnt+20] = outStrSplit[i+24];    // dF
-                        sum[cnt+25] = outStrSplit[i+33];    // dA
-                        sum[cnt+30] = outStrSplit[i+43];    // dM
-                        sum[cnt+35] = outStrSplit[i+13];    // TRIM
-                        sum[cnt+40] = outStrSplit[i+53];    // L.C.B
-                        sum[cnt+45] = outStrSplit[i+59];    // L.C.F
-                        sum[cnt+50] = outStrSplit[i+56];    // M.T.C
-                        sum[cnt+55] = outStrSplit[i+62];    // T.P.C
-                        sum[cnt+60] = outStrSplit[i+7];     // KMT
-                        sum[cnt+65] = outStrSplit[i+29];    // GM
-                        sum[cnt+70] = outStrSplit[i+39];    // GGo
-                        sum[cnt+75] = outStrSplit[i+49];    // GoM
+                        sum[cnt+CONDITION_NUM*1] = outStrSplit[i+2];     // DRAFT
+                        sum[cnt+CONDITION_NUM*8] = outStrSplit[i+24];    // dF
+                        sum[cnt+CONDITION_NUM*9] = outStrSplit[i+33];    // dA
+                        sum[cnt+CONDITION_NUM*10] = outStrSplit[i+43];    // dM
+                        sum[cnt+CONDITION_NUM*7] = outStrSplit[i+13];    // TRIM
+                        sum[cnt+CONDITION_NUM*3] = outStrSplit[i+53];    // L.C.B
+                        sum[cnt+CONDITION_NUM*4] = outStrSplit[i+59];    // L.C.F
+                        sum[cnt+CONDITION_NUM*5] = outStrSplit[i+56];    // M.T.C
+                        sum[cnt+CONDITION_NUM*6] = outStrSplit[i+62];    // T.P.C
+                        sum[cnt+CONDITION_NUM*11] = outStrSplit[i+7];     // KMT
+                        sum[cnt+CONDITION_NUM*12] = outStrSplit[i+20];    // KG
+                        sum[cnt+CONDITION_NUM*14] = outStrSplit[i+29];    // GM
+                        sum[cnt+CONDITION_NUM*13] = outStrSplit[i+39];    // GGo
+                        sum[cnt+CONDITION_NUM*15] = outStrSplit[i+49];    // GoM
 
                         cnt += 1;
                     }
@@ -89,7 +91,7 @@ var loadcd_out = function () {
             var result_str = "";
             for ( var j in sum ) {
                 result_str += sum[j] + " ";
-                if ( j % 5 == 4) result_str += "\n"; 
+                if ( j % CONDITION_NUM == CONDITION_NUM-1 ) result_str += "\n"; 
             }
 
             // 결과 print

@@ -53,19 +53,21 @@ var stabps_out = function () {
             // TOTAL WEIGHT 찾기
             var sum = new Array(); 
             var cnt=0, chk=0;
+
             var CONDITION_NUM = 5;  // CONDITION 갯수
+
             for ( var i=0; i<outStrSplit.length; i++ ) {
                 if ( outStrSplit[i] == "SWI" ) {
-                    sum[cnt+10] = outStrSplit[i+2];        // S.W.I
+                    sum[cnt+CONDITION_NUM*2] = outStrSplit[i+2];        // S.W.I
                 }
                 if ( outStrSplit[i] == "(m2):" ) {
                     sum[cnt] = outStrSplit[i+1];            // A
-                    sum[cnt+5] = outStrSplit[i+12];         // H
+                    sum[cnt+CONDITION_NUM*1] = outStrSplit[i+12];         // H
                 }
                 if ( outStrSplit[i] == "Y" ) {
-                    sum[cnt+15] = outStrSplit[i+9];        // 현단몰입각
-                    sum[cnt+20] = outStrSplit[i+16];        // 한계경사각
-                    sum[cnt+25] = outStrSplit[i+20];        // 복원정
+                    sum[cnt+CONDITION_NUM*3] = outStrSplit[i+9];        // 현단몰입각
+                    sum[cnt+CONDITION_NUM*4] = outStrSplit[i+16];        // 한계경사각
+                    sum[cnt+CONDITION_NUM*5] = outStrSplit[i+20];        // 복원정
 
                     cnt += 1;
                 }
@@ -77,7 +79,7 @@ var stabps_out = function () {
             var result_str = "";
             for ( var j in sum ) {
                 result_str += sum[j] + " ";
-                if ( j % 5 == 4) result_str += "\n"; 
+                if ( j % CONDITION_NUM == CONDITION_NUM-1 ) result_str += "\n"; 
             }
             // console.log(result_str);
             
